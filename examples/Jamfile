@@ -25,3 +25,12 @@ exe example2
 exe example3
    : example3.cpp
    ;
+
+exe example4
+   : example4.cpp
+   ;
+
+#exe example5
+#   : example5.pb.cpp example5.cpp
+#   ;
+
