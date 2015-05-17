@@ -10,14 +10,9 @@
 #ifndef BOOST_BOOSTACHE_MODEL_EXTENSIONS_PROPERTY_TREE_HPP
 #define BOOST_BOOSTACHE_MODEL_EXTENSIONS_PROPERTY_TREE_HPP
 
-#include <boost/optional.hpp>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/boostache/vm/traits.hpp>
-#include <boost/boostache/model/category.hpp>
-#include <boost/boostache/model/render_traits.hpp>
-#include <boost/boostache/model/basic_render_extension.hpp>
-#include <boost/property_tree/ptree.hpp>
 #include <type_traits>
+#include <boost/boostache/model/category.hpp>
+#include <boost/property_tree/ptree.hpp>
 
 namespace boost { namespace boostache { namespace extension {
 
@@ -60,8 +55,6 @@ void select_context_dispatch(Stream &stream,
     auto ientry = context.find(v.tag);
     if (ientry != context.not_found())
         generate(stream, v.body, ientry->second);
-    else
-        generate(stream, v.body, context);
 }
 
 template <typename Stream, typename Node>
